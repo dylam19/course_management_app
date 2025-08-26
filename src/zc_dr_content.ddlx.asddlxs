@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Content',
+                typeNamePlural: 'Contents',
+                title: { type: #STANDARD, value: 'ContentID' } } }
+annotate entity ZC_DR_CONTENT with
+{
+
+  @UI.facet: [ { id:            'Content',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Content',
+                 position:      10 }  ]
+
+  @UI: { identification: [ { position: 10, label: 'Content UUID'  } ] }
+  ContentUUID;
+
+  @UI.hidden: true
+  CourseUUID;
+
+  @UI: { lineItem:       [ { position: 20, label: 'Content ID' } ],
+         identification: [ { position: 20, label: 'Content ID' } ] }
+  ContentID;
+
+
+  @UI: { lineItem:       [ { position: 30, label: 'Title' } ],
+         identification: [ { position: 30, label: 'Title' } ] }
+  Title;
+
+  @UI: { lineItem:       [ { position: 40, label: 'Description' } ],
+         identification: [ { position: 40, label: 'Descrition' } ] }
+  Description;
+
+  @UI: { lineItem:       [ { position: 50, label: 'Content URL'  } ],
+         identification: [ { position: 50, label: 'Content URL' } ] }
+  ContentURL;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChanged;
+
+}

@@ -1,0 +1,68 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Enrollment',
+                typeNamePlural: 'Enrollments',
+                title: { type: #STANDARD, value: 'EnrollmentID' } } }
+annotate entity ZC_DR_ENROLLMENT
+    with 
+{
+  @UI.facet: [ { id:            'Enrollment',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Enrollment',
+                 position:      10 }  ]
+
+  @UI: { identification: [ { position: 10, label: 'Enrollment'  } ] }
+EnrollmentUUID;
+
+@UI.hidden: true
+CourseUUID;
+
+  @UI: { lineItem:       [ { position: 20, label: 'Employee' } ],
+         identification: [ { position: 20, label: 'Employee' } ] }
+EmployeeUUID;
+
+      @UI.identification: [{ position: 30, label: 'Employee ID' }]
+      @UI.lineItem:       [{ position: 30, label: 'Employee ID' }]
+EmployeeID;
+
+      @UI.identification: [{ position: 40, label: 'Employee Name' }]
+      @UI.lineItem:       [{ position: 40, label: 'Employee Name' }]
+EmployeeName;
+
+      @UI.identification: [{ position: 50, label: 'Employee Surname' }]
+      @UI.lineItem:       [{ position: 50, label: 'Employee Surname' }]
+EmployeeSurname;
+
+      @UI.identification: [{ position: 60, label: 'Employee Email' }]
+      @UI.lineItem:       [{ position: 60, label: 'Employee Email' }]
+EmployeeEmail;
+
+  @UI: { lineItem:       [ { position: 70, label: 'Enrollment ID' } ],
+         identification: [ { position: 70, label: 'Entollment ID' } ] }
+EnrollmentID;
+
+  @UI: { lineItem:       [ { position: 80, label: 'Enrollment Date' } ],
+         identification: [ { position: 80, label: 'Enrollment Date' } ] }
+EnrollmenDdate;
+
+  @UI: { lineItem:       [ { position: 80, label: 'Status' } ],
+         identification: [ { position: 80, label: 'Status' } ] }
+Status;
+
+@UI.hidden: true
+CreatedBy;
+
+@UI.hidden: true
+CreatedAt;
+
+@UI.hidden: true
+LastChangedBy;
+
+@UI.hidden: true
+LastChangedAt;
+
+@UI.hidden: true
+LocalLastChanged;
+
+}

@@ -1,0 +1,38 @@
+managed implementation in class zbp_c_dr_employee unique;
+strict ( 2 );
+with draft;
+extensible;
+
+define behavior for ZC_DR_EMPLOYEE alias Employee
+persistent table zdr_employee
+extensible
+draft table ZDR_EMPLOYEE_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) EmployeeUUID;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zdr_employee corresponding extensible
+    {
+      EmployeeUUID     = employeeuuid;
+      EmployeeID       = employeid;
+      Name             = name;
+      Surname          = surname;
+      Email            = email;
+      CreatedBy        = createdby;
+      CreatedAt        = createdat;
+      LastChangedBy    = lastchangedby;
+      LastChangedAt    = lastchangedat;
+      LocalLastChanged = locallastchanged;
+    }
+}

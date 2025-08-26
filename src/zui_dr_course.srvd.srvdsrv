@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service definition for ZC_DR_COURSE'
+define service ZUI_DR_COURSE {
+  expose ZC_DR_COURSE     as Course;
+  expose ZC_DR_CONTENT    as Content;
+  expose ZC_DR_ENROLLMENT as Enrollment;
+  expose ZC_DR_EMPLOYEE   as Employee;
+}

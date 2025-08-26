@@ -1,0 +1,75 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Course',
+                typeNamePlural: 'Courses',
+                title: { type: #STANDARD, label: 'Course', value: 'CourseID' } },
+  presentationVariant: [{ sortOrder: [{ by: 'CourseID', direction:  #DESC }] }] }
+annotate entity ZC_DR_COURSE with
+{
+
+  @UI.facet: [ { id:              'Course',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Course',
+                 position:        10 },
+                 
+               { id:              'Content',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Contents',
+                 position:        20,
+                 targetElement:   '_Content'},
+                 
+               { id:              'Enrollment',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Enrollments',
+                 position:        30,
+                 targetElement:   '_Enrollment'} ]
+
+  @UI.hidden: true
+  CourseUUID;
+
+  @UI: {  lineItem:       [ { position: 10, label:'Course ID' } ],
+          identification: [ { position: 10, label: 'Course ID' } ],
+          selectionField: [ { position: 10 } ] }
+  CourseID;
+
+  @UI: {  lineItem:       [ { position: 20, label: 'Title' } ],
+          identification: [ { position: 20, label: 'Title' } ],
+          selectionField: [ { position: 20 } ] }
+  Title;
+
+  @UI: {  lineItem:       [ { position: 30, label: 'Description' } ],
+          identification: [ { position: 30, label: 'Description' } ],
+          selectionField: [ { position: 30 } ] }
+  Description;
+
+  @UI: {  lineItem:       [ { position: 40, label: 'Start Date' } ],
+           identification: [ { position: 40, label: 'Start Date' } ] }
+  StartDate;
+
+  @UI: {  lineItem:       [ { position: 50, label: 'End Date' } ],
+          identification: [ { position: 50, label: 'End Date' } ] }
+  EndDate;
+
+  @UI: {  lineItem:       [ { position: 60, label: 'status' } ],
+          identification: [ { position: 60, label: 'status' } ] }
+  Status;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChanged;
+
+}

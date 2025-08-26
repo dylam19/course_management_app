@@ -1,0 +1,111 @@
+managed implementation in class zbp_i_dr_course unique;
+strict ( 2 );
+with draft;
+extensible;
+
+define behavior for ZI_DR_COURSE alias Course
+persistent table zdr_course
+extensible
+draft table ZDR_COURSE_D
+lock master total etag Lastchangedat
+authorization master( global )
+etag master LocalLastChanged
+
+{
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  field ( numbering : managed, readonly ) CourseUUID;
+  association _Content { create; }
+  association _Enrollment { create; }
+
+  mapping for zdr_course corresponding extensible
+    {
+      CourseUUID       = courseuuid;
+      CourseID         = courseid;
+      Title            = title;
+      Description      = description;
+      StartDate        = startdate;
+      EndDate          = enddate;
+      Status           = status;
+      CreatedBy        = createdby;
+      CreatedAt        = createdat;
+      LastChangedBy    = lastchangedby;
+      LastChangedAt    = lastchangedat;
+      LocalLastChanged = locallastchanged;
+    }
+}
+
+define behavior for ZI_DR_CONTENT alias Content
+persistent table zdr_content
+extensible
+draft table ZDR_CONTENT_D
+lock dependent by _Course
+authorization master( global )
+etag master LocalLastChanged
+{
+
+  association _Course;
+
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) ContentUUID;
+  field ( readonly ) CourseUUID;
+
+  mapping for zdr_content corresponding extensible
+    {
+      ContentUUID      = contentuuid;
+      CourseUUID       = courseuuid;
+      ContentID        = contentid;
+      Title            = title;
+      Description      = description;
+      ContentURL       = contenturl;
+      CreatedBy        = createdby;
+      CreatedAt        = createdat;
+      LastChangedBy    = lastchangedby;
+      LastChangedAt    = lastchangedat;
+      LocalLastChanged = locallastchanged;
+    }
+}
+
+define behavior for ZI_DR_ENROLLMENT alias Enrollment
+persistent table zdr_enrollment
+extensible
+draft table ZDR_ENROLLMENT_D
+lock dependent by _Course
+authorization master( global )
+etag master LocalLastChanged
+{
+
+  association _Course;
+
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) EnrollmentUUID;
+  field ( readonly ) CourseUUID;
+
+  mapping for zdr_enrollment corresponding extensible
+    {
+      EnrollmentUUID   = enrollmentuuid;
+      CourseUUID       = courseuuid;
+      EmployeeUUID     = employeeuuid;
+      EnrollmentID     = enrollmentid;
+      EnrollmenDdate   = enrollmentdate;
+      Status           = status;
+      CreatedBy        = createdby;
+      CreatedAt        = createdat;
+      LastChangedBy    = lastchangedby;
+      LastChangedAt    = lastchangedat;
+      LocalLastChanged = locallastchanged;
+    }
+
+}

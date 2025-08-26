@@ -1,0 +1,50 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Employee',
+                typeNamePlural: 'Employees',
+                title: { type: #STANDARD, value: 'EmployeeID' } } }
+annotate entity ZC_DR_EMPLOYEE
+    with 
+{
+  @UI.facet: [ { id:            'Employee',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Employee',
+                 position:      10 }  ]
+
+  @UI: { identification: [ { position: 10, label: 'Employee'  } ] }
+EmployeeUUID;
+
+  @UI: { lineItem:       [ { position: 20, label: 'Employee ID' } ],
+         identification: [ { position: 20, label: 'Employee ID' } ] }
+EmployeeID;
+
+  @UI: { lineItem:       [ { position: 30, label: 'Name' } ],
+         identification: [ { position: 30, label: 'Name' } ] }
+Name;
+
+  @UI: { lineItem:       [ { position: 40, label: 'Surname' } ],
+         identification: [ { position: 40, label: 'Surname' } ] }
+Surname;
+
+  @UI: { lineItem:       [ { position: 50, label: 'Email' } ],
+         identification: [ { position: 50, label: 'Email' } ] }
+Email;
+
+@UI.hidden: true
+CreatedBy;
+
+@UI.hidden: true
+CreatedAt;
+
+@UI.hidden: true
+LastChangedBy;
+
+@UI.hidden: true
+LastChangedAt;
+
+@UI.hidden: true
+LocalLastChanged;
+
+    
+}
