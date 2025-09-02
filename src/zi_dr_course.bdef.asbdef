@@ -16,13 +16,23 @@ etag master LocalLastChanged
   update;
   delete;
 
+  determination determineCourseID on modify { create; }
+  validation validateMandatoryFields on save { create; update; }
+
   draft action Activate optimized;
   draft action Discard;
   draft action Edit;
   draft action Resume;
-  draft determine action Prepare;
+  draft determine action Prepare {
+  validation validateMandatoryFields;
+  }
 
   field ( numbering : managed, readonly ) CourseUUID;
+
+  field( readonly ) CourseID;
+
+  field( mandatory ) Title, StartDate, EndDate;
+
   association _Content { create; }
   association _Enrollment { create; }
 
@@ -57,8 +67,10 @@ etag master LocalLastChanged
   update;
   delete;
 
+  determination determineContentID on modify { create; }
+
   field ( numbering : managed, readonly ) ContentUUID;
-  field ( readonly ) CourseUUID;
+  field ( readonly ) CourseUUID, ContentID;
 
   mapping for zdr_content corresponding extensible
     {
@@ -90,8 +102,10 @@ etag master LocalLastChanged
   update;
   delete;
 
+  determination determineEnrollmentID on modify { create; }
+
   field ( numbering : managed, readonly ) EnrollmentUUID;
-  field ( readonly ) CourseUUID;
+  field ( readonly ) CourseUUID, EnrollmentID;
 
   mapping for zdr_enrollment corresponding extensible
     {

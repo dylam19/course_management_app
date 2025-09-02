@@ -8,6 +8,7 @@ define view entity ZC_DR_CONTENT as projection on ZI_DR_CONTENT as Content
     key ContentUUID,
     CourseUUID,
     @Search.defaultSearchElement: true
+    
     ContentID,
     Title,
     Description,
