@@ -11,7 +11,7 @@ Este repositorio contiene los objetos ABAP versionados con abapGit para una apli
 
 | Tipo        | Archivo                         | Descripción                     |
 |-------------|---------------------------------|---------------------------------|
-| Tabla       | (zdr_course.tabl.xml)           | Tabla base de cursos            |
+| Tabla       | [zc_dr_course.ddls.asddls]      | Tabla base de cursos            |
 | Tabla       | `zdr_course_d.tabl.xml`         | Texto de cursos (draft)         |
 | Tabla       | `zdr_content.tabl.xml`          | Tabla base de contenidos        |
 | Tabla       | `zdr_content_d.tabl.xml`        | Texto de contenidos (draft)     |
