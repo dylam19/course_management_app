@@ -63,7 +63,8 @@ Este repositorio contiene los objetos ABAP versionados con abapGit para una apli
 | Tipo        | Archivo                                                    | Descripción                            |
 |-------------|------------------------------------------------------------|----------------------------------------|
 | Clase       | [zbp_i_dr_course.clas.abap](src/zbp_i_dr_course.clas.abap) | Clase handler de interfaz `I_DR_COURSE`|
-| Clase       | [zbp_c_dr_employee.clas.abap](src/zbp_c_dr_employee.clas.abap)| Clase handler de proyección empleado   |
+| Clase       | [zbp_c_dr_employee.clas.locals_imp.abap](src/zbp_c_dr_employee.clas.locals_imp.abap)| Clase local `I_DR_COURSE`|
+| Clase       | [zbp_c_dr_employee.clas.abap](src/zbp_c_dr_employee.clas.abap)| Clase handler de proyección empleado|
 
 ---
 
