@@ -10,15 +10,15 @@ Este repositorio contiene los objetos ABAP versionados con abapGit para una apli
 ### 🧱 Entidades base (Tablas)
 
 | Tipo        | Archivo                         | Descripción                     |
-|-------------|----------------------------------|---------------------------------|
+|-------------|---------------------------------|---------------------------------|
 | Tabla       | `zdr_course.tabl.xml`           | Tabla base de cursos            |
-| Tabla       | `zdr_course_d.tabl.xml`         | Texto de cursos (idioma)        |
+| Tabla       | `zdr_course_d.tabl.xml`         | Texto de cursos (draft)         |
 | Tabla       | `zdr_content.tabl.xml`          | Tabla base de contenidos        |
-| Tabla       | `zdr_content_d.tabl.xml`        | Texto de contenidos             |
+| Tabla       | `zdr_content_d.tabl.xml`        | Texto de contenidos (draft)     |
 | Tabla       | `zdr_employee.tabl.xml`         | Tabla base de empleados         |
-| Tabla       | `zdr_employee_d.tabl.xml`       | Texto de empleados              |
+| Tabla       | `zdr_employee_d.tabl.xml`       | Texto de empleados (draft)      |
 | Tabla       | `zdr_enrollment.tabl.xml`       | Tabla de inscripciones          |
-| Tabla       | `zdr_enrollment_d.tabl.xml`     | Texto de inscripciones          |
+| Tabla       | `zdr_enrollment_d.tabl.xml`     | Texto de inscripciones (draft)  |
 
 ---
 
