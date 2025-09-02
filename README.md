@@ -1,6 +1,3 @@
-# RAP Course App
-Este repositorio contiene objetos ABAP de una app RAP para gestión de cursos.
-
 # 📘 RAP Course Management App
 
 Este repositorio contiene los objetos ABAP versionados con abapGit para una aplicación basada en el modelo RAP (ABAP RESTful Application Programming Model) enfocada en la gestión de cursos.
